@@ -10,6 +10,26 @@ export default function Login() {
     const [password, setPassword] = useState("");
     const [error, setError] = useState("");
 
+    const navigate = useNavigate();
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+
+        if (!userName.trim() || !password) {
+            setError("Username and password are required.");
+            return;
+        }
+
+        if (
+            userName === VALID_USERNAME &&
+            password === VALID_PASSWORD
+        ) {
+            sessionStorage.setItem("isAuthenticated", "true");
+            setError("");
+            navigate("/Home", { replace: true });
+        } else {
+            setError("Invalid username or password.");
+        }
+    };
 
 }
