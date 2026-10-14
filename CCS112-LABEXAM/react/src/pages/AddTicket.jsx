@@ -3,7 +3,12 @@ import { useNavigate } from "react-router-dom";
 
 export default function AddTicket(){
 
-    const [brandName, setBrandName] = useState("");
+    const [requesterName, setRequesterName] = useState("");
+    const [requesterEmail, setRequesterEmail] = useState("");
+    const [issueCategory, setIssueCategory] = useState("");
+    const [priority, setPriority] = useState("");
+    const [subject, setSubject] = useState("");
+    const [description, setDescription] = useState("");
 
     const [errors, setErrors] = useState({});
 
@@ -49,7 +54,7 @@ export default function AddTicket(){
                 </div> 
                 <br />
 
-                
+                    
 
             </form>
         </div>
