@@ -32,4 +32,48 @@ export default function Login() {
         }
     };
 
+    return (
+        <div>
+            <h1>Drugs and Medicine Inventory System Login</h1>
+
+            <form onSubmit={handleSubmit}>
+                <label>
+                    Username: 
+                    <input
+                        type="text"
+                        value={userName}
+                        onChange={(e) => {
+                            setUserName(e.target.value);
+                            setError("");
+                        }}
+                    />
+                </label>
+
+                <br />
+
+                <label>
+                    Password:
+                    <input
+                        type="password"
+                        value={password}
+                        onChange={(e) => {
+                            setPassword(e.target.value);
+                            setError("");
+                        }}
+                    />
+                </label>
+
+                <br />
+
+                <button type="submit">Login</button>
+
+                {error && (
+                    <p role="alert" style={{ color: "red" }}>
+                        {error}
+                    </p>
+                )}
+            </form>
+        </div>
+    );
+
 }
