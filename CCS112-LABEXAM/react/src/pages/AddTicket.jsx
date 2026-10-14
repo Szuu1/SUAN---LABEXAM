@@ -28,7 +28,28 @@ export default function AddTicket(){
                             {errors.requesterName}
                         </p>
                     )}
-                </div>
+                </div> 
+                <br />
+
+                <div>
+                    <label>Requester Email: </label> <br />
+
+                    <input 
+                        type="text"
+                        value={requesterEmail}
+                        onChange={(e) => setRequesterEmail(e.target.value)}
+                        placeholder="Requester Email"
+                    />
+
+                    {errors.requesterEmail && (
+                        <p style={{ color: "red" }}>
+                            {errors.requesterEmail}
+                        </p>
+                    )}
+                </div> 
+                <br />
+
+                
 
             </form>
         </div>
